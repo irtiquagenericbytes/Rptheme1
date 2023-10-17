@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;800;900&family=Inter:wght@400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Be-Vietnam;
+}
+
+@font-face {
+  font-family: Be-Vietnam;
+  src: url(../Static/Fonts/BeVietnam-Regular.ttf);
+}
+#chk-btn:checked + .navbar-menu {
+  height: 160px;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scrollbar-color: #0387fa #ffffff !important;
+  scrollbar-width: thin !important;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Be-Vietnam;
+  font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 0.7em;
+  height: 0.6em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0387fa;
+  border: 0.1em solid #fff;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0457a0;
+}
+
+.interFont {
+  font-family: "Inter", sans-serif;
+}
+
+.beVietnamFont {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.bg-gradient-modals {
+  background: linear-gradient(0deg, rgba(122, 160, 255, 0.44) 0%, rgba(128, 232, 255, 0.44) 100%);
+}
+
+.bg--gradient {
+  background: linear-gradient(0deg, rgba(122, 160, 255, 0.22) 0%, rgba(128, 232, 255, 0.22) 100%);
+}
+
+.contact-card {
+  background: linear-gradient(256deg, #9BB5F7 -66.11%, #CEE8FF 53.27%, #CEE8FF 53.27%);
+}
+
+.bg--white {
+  background: white;
+}
+
+.footer-section ul li a {
+  position: relative;
+}
+.footer-section ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  height: 2px;
+  left: 0;
+  width: 0;
+  background: #4a83e7;
+  transition: 0.3s;
+}
+.footer-section ul li a:hover::after {
+  width: 100%;
+  transition: 0.3s;
+}
+.footer-section .socilmedia-links a {
+  border: 1px solid #4a83e7;
+  transition: all linear 0.3s;
+}
+.footer-section .socilmedia-links a:hover {
+  background: #000;
+  border: 1px solid #000;
+}
+.footer-section .socilmedia-links a:hover svg {
+  fill: #fff;
+}
+
+.ul-after li {
+  position: relative;
+}
+.ul-after li::before {
+  content: "";
+  background-image: url("../Static/Images/li-before.svg");
+  background-size: cover;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 16px;
+  position: absolute;
+}
+
+.active {
+  color: #4A83E7;
+  text-decoration: underline;
+}
+
+.info-inputs input {
+  border-bottom: 1px solid rgba(46, 2, 73, 0.3);
+  max-width: 400px;
+  outline: none;
+  font-size: 14px;
+  color: #2E0249;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  .info-inputs input {
+    font-size: 16px;
+  }
+}
+
+.Contact-input:focus::-webkit-input-placeholder {
+  color: #2E0249;
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .points-wrapper div:first-of-type {
+    margin-top: 0 !important;
+  }
+  .points-wrapper div:nth-child(2) {
+    margin-top: 250px;
+  }
+  .points-wrapper div:nth-child(odd) {
+    margin-top: -200px;
+  }
+  .navbar-menu {
+    overflow: unset;
+  }
+  .navbar-menu li a {
+    position: relative;
+  }
+  .navbar-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    height: 2px;
+    left: 0;
+    width: 0;
+    background: #4a83e7;
+    transition: 0.3s;
+  }
+  .navbar-menu li a:hover::after {
+    width: 100%;
+    transition: 0.3s;
+  }
+  .navbar-menu li .active {
+    text-decoration: none;
+    transition: none;
+  }
+  .navbar-menu li .active::after {
+    width: 100%;
+    transition: none;
+  }
+}
+@media (min-width: 1200px) {
+  .team-seaction .xl-max-w-992px {
+    max-width: 992px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+.carosuel__indictors div[aria-current=true] {
+  background-color: #4A83E7 !important;
+  width: 1rem;
+  height: 1rem;
+}
+.carosuel__indictors > div:hover {
+  background-color: #4A83E7 !important;
+}/*# sourceMappingURL=style.css.map */

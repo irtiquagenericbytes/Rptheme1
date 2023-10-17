@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rootpointers</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="shortcut icon" href="./static/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="navba relative z-[999]">
+        <nav class="fixed left-0 right-0 bg-white py-4">
+            <div class="container flex items-center  mx-auto justify-between lg:justify-normal  ">
+                <div class="header-logo mr-16">
+                    <a href="./index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="59" height="66" viewBox="0 0 59 66" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15.5264 29.5007V14.4641C15.5264 14.4641 24.4643 14.6318 29.3801 14.4641C34.2957 14.2964 43.178 16.1969 45.2447 23.6873C47.3113 31.1774 42.2279 39.6739 30.7764 39.618H23.6821V48.5431L15.5264 48.6454V33.1339C15.5264 33.1339 27.3693 33.1339 29.6593 33.1339C31.9498 33.1339 37.7033 32.4908 37.4244 27.2088C37.1448 21.9264 33.4021 21.0878 30.7764 21.1159C28.1512 21.1439 23.7657 21.1159 23.7657 21.1159V29.4724L15.5264 29.5007Z"
+                                fill="#4A83E7" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M35.4521 42.759C35.4521 42.759 40.8587 42.1645 42.7721 41.1035L48.0224 48.632L39.5457 48.6455L35.4521 42.759Z"
+                                fill="#4A83E7" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.442383 47.4983C0.442383 48.8564 1.17603 50.1122 2.3666 50.7915L27.6815 65.2317C28.872 65.9104 30.3391 65.9104 31.53 65.2317L56.8447 50.7915C58.0352 50.1122 58.7686 48.8564 58.7686 47.4983V18.6175C58.7686 17.2592 58.0352 16.0039 56.8447 15.3248L31.53 0.884411C30.3391 0.205196 28.872 0.205196 27.6815 0.884411L2.3666 15.3248C1.17603 16.0039 0.442383 17.2591 0.442383 18.6175V47.4983ZM27.8613 62.2253L4.9116 49.1342C3.83216 48.5184 3.16711 47.3802 3.16711 46.1493V19.9669C3.16711 18.7354 3.83216 17.5974 4.9116 16.9817L27.8613 3.89071C28.9406 3.27499 30.2705 3.27499 31.3498 3.89071L54.2995 16.9817C55.3787 17.5974 56.0439 18.7354 56.0439 19.9669V46.1493C56.0439 47.3802 55.3787 48.5184 54.2995 49.1342L31.3498 62.2253C30.2705 62.8411 28.9406 62.8411 27.8613 62.2253Z"
+                                fill="#4A83E7" />
+                        </svg>
+                    </a>
+                </div>
+                <label class="menu lg:hidden" for="chk-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none"
+                        class="hamburger">
+                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </label>
+                <input hidden class="toogle-accordion" type="checkbox" id="chk-btn" />
+                <ul
+                    class="navbar-menu bg-white h-0 overflow-hidden lg:h-auto lg: lg:top-0 flex-col lg:flex-row flex items-center font-medium xl:text-lg [&>li]:w-fit [&>li]:cursor-pointer [&>li:hover]:text-blue-600 absolute  left-0 top-[6rem] w-full lg:w-auto lg:static transition-all duration-500 lg:gap-[4rem]">
+                    <li class="py-1 lg:py-0"><a href="index.html">Home</a></li>
+                    <li class="py-1 lg:py-0"><a href="services.html">Services</a></li>
+                    <li class="py-1 lg:py-0"><a href="portfolio.html">Portfolio</a></li>
+                    <li class="py-1 lg:py-0"><a href="our-team.html">Our Team</a></li>
+                    <li class="py-1 lg:py-0"><a href="contact-us.html">About Us</a></li>
+                </ul>
+                <ul
+                    class="nav-contact lg:flex font-medium ml-auto xl:text-lg hidden lg:gap-4 px-2 [&>li]:cursor-pointer">
+                    <li class="text-blue-600">
+                        <a href="tel:+74951519090">+7 (495) 151-9090</a>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <circle cx="14.9658" cy="14" r="13.5" fill="white" stroke="#4A83E7" />
+                            <path
+                                d="M16.3986 11.2936C16.9598 11.4028 17.4754 11.6767 17.8797 12.0802C18.284 12.4837 18.5584 12.9984 18.6679 13.5585L16.3986 11.2936ZM16.3986 9C17.5644 9.12926 18.6515 9.65033 19.4815 10.4776C20.3114 11.3049 20.8348 12.3893 20.9658 13.5527L16.3986 9ZM20.3913 18.1284V19.8486C20.392 20.0083 20.3592 20.1663 20.2951 20.3126C20.231 20.459 20.137 20.5903 20.0191 20.6982C19.9012 20.8062 19.762 20.8884 19.6105 20.9396C19.4589 20.9907 19.2983 21.0097 19.1389 20.9953C17.3711 20.8036 15.673 20.2007 14.1811 19.235C12.793 18.3547 11.6162 17.1801 10.7342 15.7947C9.76327 14.2988 9.15906 12.5957 8.97048 10.8234C8.95613 10.6648 8.97501 10.505 9.02592 10.3541C9.07684 10.2033 9.15867 10.0646 9.26621 9.94703C9.37375 9.82944 9.50465 9.73549 9.65056 9.67117C9.79647 9.60684 9.9542 9.57354 10.1137 9.57339H11.8372C12.116 9.57065 12.3863 9.66919 12.5977 9.85064C12.8091 10.0321 12.9471 10.2841 12.9862 10.5596C13.0589 11.1101 13.1938 11.6506 13.3883 12.1709C13.4656 12.3761 13.4823 12.5991 13.4365 12.8136C13.3907 13.028 13.2842 13.2248 13.1298 13.3807L12.4002 14.1089C13.218 15.5444 14.4089 16.733 15.8471 17.5493L16.5767 16.8211C16.7329 16.6669 16.9301 16.5606 17.145 16.5149C17.3598 16.4692 17.5833 16.4859 17.7889 16.563C18.3101 16.7572 18.8517 16.8918 19.4032 16.9644C19.6823 17.0037 19.9371 17.144 20.1193 17.3586C20.3015 17.5732 20.3983 17.8472 20.3913 18.1284Z"
+                                stroke="#4A83E7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <circle cx="14.8965" cy="14" r="13.5" fill="white" stroke="#4A83E7" />
+                            <path
+                                d="M20.8965 17C20.8965 17.3536 20.756 17.6928 20.506 17.9428C20.2559 18.1929 19.9168 18.3333 19.5632 18.3333H11.5632L8.89648 21V10.3333C8.89648 9.97971 9.03696 9.64057 9.28701 9.39052C9.53706 9.14048 9.8762 9 10.2298 9H19.5632C19.9168 9 20.2559 9.14048 20.506 9.39052C20.756 9.64057 20.8965 9.97971 20.8965 10.3333V17Z"
+                                stroke="#4A83E7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="pt-[98px]">
+        <section class="hero py-[7rem] lg:py-36 2xl:py-[13rem] 3xl:py-[16rem] 4xl:py-[18rem] relative">
+            <span class="traingles absolute bottom-0 left-0 z-[-1]"><img src="Static/Images/left-triangles.png" alt="">
+            </span>
+            <div class="container flex z-[2]">
+                <div class="portion-1 relative  md:w-2/4  lg:m-0">
+                    <!-- lg:max-w-[530px] -->
+                    <div class="banner-content">
+                        <h1 class="text-xl lg:text-2xl xl:text-[38px] 2xl:text-[48px] 
+                            xl:leading-[3.5rem] font-extrabold mb-3 text-lightblue">
+                            Projects Based Outsourcing</h1>
+                        <p class="text-sm xl:text-lg 2xl:text-xl">Harnessing external talent for focused project
+                            excellence,
+                            optimizing resources and results. </p>
+
+                    </div>
+                    <a href="#" class="px-6  rounded-3xl hover:bg-blue-700 hover:cursor-pointer
+                         bg-[#4A83E7] text-white mt-7 text-sm leading-10 inline-block">Learn More</a>
+                    <div class="imgs relative">
+                        <div class="rounded-arrow absolute left-3 -top-7 lg:left-[8.5rem] -z-10"><img
+                                src="Static/Images/big=rotate-arrow.png" alt=""> </div>
+                    </div>
+
+                </div>
+                <div class="portion-2  flex flex-col justify-end">
+                </div>
+            </div>
+
+            <div class="hidden md:block absolute top-[50%] right-0  -translate-y-2/4 max-w-[300px] z-[-1] lg:max-w-[400px] 
+            2xl:max-w-[500px] 3xl:max-w-[100%]">
+                <img src="Static/Images/project-based.png" width="594" height="677">
+            </div>
+
+        </section>
+
+        <section class="dedicated-team bg-gradient--1 lg:bg-bg--none py-[4rem] relative">
+            <div class="container">
+                <div class="flex justify-center md:items-center gap-4 lg:gap-6  flex-wrap">
+
+                    <div class="flex-grow lg:flex-grow-0 md:w-[48%] lg:w-[full]">
+                        <img src="Static/Images/project-based-outsourcing-image.svg" height="426" width="426"
+                            alt="project based">
+                    </div>
+                    <div class="flex-grow lg:flex-grow-0 md:w-[48%] lg:w-[full] relative z-10 ">
+
+                        <h2 class="heading-22">
+                            Unlocking Success with
+                            <span class="block text-lightblue"> Project-Based Outsourcing </span>
+                        </h2>
+                        <p>At Rootpointers, we help you to optimize your business operations, reduce costs, and focus on
+                            your core competencies through our project-based outsourcing model. By taking full
+                            responsibility for the project from start to finish, we ensure timely delivery and adherence
+                            to the highest quality standards.</p>
+                        <span class="absolute top-[-36px] left-[-10px] z-[-1] h-[140px] w-[140px] inline-block
+                        lg:w-[250px] lg:h-[250px] lg:left-[-30px]">
+                            <img src="Static/Images/before-triangle.svg" alt="">
+                        </span>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="points-section bg-gradient--1 lg:bg-bg--none py-[4rem] lg:pt-0  relative">
+
+            <div class="container relative">
+                <div
+                    class="points-wrapper flex justify-center lg:justify-between items-stretch lg:items-center gap-4 lg:gap-6 xl:gap-8 flex-wrap">
+                    <div
+                        class="flex-grow lg:flex-grow-0 lg:w-[46%] mb-6 lg:mb-0  bg-white lg:bg-lightgray rounded-[20px] py-8 px-4 relative z-[2] 2xl:px-8">
+                        <div class="flex flex-col  h-full text-sm ">
+                            <div class="bg-[url('../Static/Images/bg-egg-shape.svg')] bg-no-repeat bg-cover 
+                        w-[120px] h-[130px] flex justify-center items-center relative mb-4">
+                                <span class="text-[14px] text-[#525167] inline-block font-bold absolute top-[3px]">STEP
+                                    1</span>
+                                <img src="Static/Images/requirments.svg" class="h-[44px] w-[44px] " height="44"
+                                    width="44" alt="leadership">
+                            </div>
+                            <h3 class="text-lightblue uppercase text-[18px] font-bold mb-4">Requirements</h3>
+                            <p class="!ledaing-[1.6]">Requirements are the project's cornerstone, defining its goals,
+                                functions, and
+                                constraints. They facilitate effective planning, development, and communication among
+                                stakeholders. Precise requirement gathering and analysis are essential for project
+                                efficiency, ensuring alignment with client expectations and deadlines. Effective
+                                requirement management is central to project success.</p>
+                        </div>
+                        <span class="hidden lg:block absolute top-[10px] right-[-120px] z-[-1]"><img
+                                src="Static/Images/project-1-after.svg" width="100" height="100" alt="img"></span>
+                    </div>
+
+                    <div
+                        class="flex-grow lg:flex-grow-0 lg:w-[46%] mb-6 lg:mb-0  bg-white lg:bg-lightgray rounded-[20px] py-8 px-4 relative z-[2] 2xl:px-8">
+                        <div class="flex flex-col  h-full text-sm ">
+                            <div class="bg-[url('../Static/Images/bg-egg-shape.svg')] bg-no-repeat bg-cover 
+                        w-[120px] h-[130px] flex justify-center items-center relative mb-4">
+                                <span class="text-[14px] text-[#525167] inline-block font-bold absolute top-[3px]">STEP
+                                    2</span>
+                                <img src="Static/Images/time-cost-estimation.svg" class="h-[44px] w-[44px] " height="44"
+                                    width="44" alt="leadership">
+                            </div>
+                            <h3 class="text-lightblue uppercase text-[18px] font-bold mb-4">Time / Cost Estimation</h3>
+                            <p class="!ledaing-[1.6]">Time and cost estimation is the process of forecasting project
+                                schedules and resource needs based on comprehensive analysis. It enables informed
+                                decision-making, efficient resource allocation, and effective project management. These
+                                estimations are vital for staying within budget and meeting project deadlines.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-grow lg:flex-grow-0 lg:w-[46%] mb-6 lg:mb-0  bg-white lg:bg-lightgray rounded-[20px] py-8 px-4 relative z-[2] 2xl:px-8">
+                        <div class="flex flex-col  h-full text-sm ">
+                            <div class="bg-[url('../Static/Images/bg-egg-shape.svg')] bg-no-repeat bg-cover 
+                        w-[120px] h-[130px] flex justify-center items-center relative mb-4">
+                                <span class="text-[14px] text-[#525167] inline-block font-bold absolute top-[3px]">STEP
+                                    3</span>
+                                <img src="Static/Images/project-planning.svg" class="h-[44px] w-[44px] " height="44"
+                                    width="44" alt="leadership">
+                            </div>
+                            <h3 class="text-lightblue uppercase text-[18px] font-bold mb-4">Project Planning </h3>
+                            <p class="!ledaing-[1.6]">Project planning is a structured process that outlines project
+                                goals, tasks, timelines,
+                                and resources. It provides a roadmap for efficient execution, allowing teams to stay on
+                                track and within budget. Effective planning is vital for achieving project objectives
+                                and
+                                managing resources effectively.</p>
+                        </div>
+                        <span class="hidden lg:block absolute top-[50%] right-[-70px] 2xl:right-[-100px] z-[-1]"><img
+                                src="Static/Images/project-3-after.svg" class="2xl:w-[100px] 2xl:h-[100px]" width="70"
+                                height="70" alt="img"></span>
+                    </div>
+                    <div
+                        class="flex-grow lg:flex-grow-0 lg:w-[46%] mb-6 lg:mb-0  bg-white lg:bg-lightgray rounded-[20px] py-8 px-4 relative z-[2] 2xl:px-8">
+                        <div class="flex flex-col  h-full text-sm ">
+                            <div class="bg-[url('../Static/Images/bg-egg-shape.svg')] bg-no-repeat bg-cover 
+                        w-[120px] h-[130px] flex justify-center items-center relative mb-4">
+                                <span class="text-[14px] text-[#525167] inline-block font-bold absolute top-[3px]">STEP
+                                    4</span>
+                                <img src="Static/Images/development.svg" class="h-[44px] w-[44px] " height="44"
+                                    width="44" alt="leadership">
+                            </div>
+                            <h3 class="text-lightblue uppercase text-[18px] font-bold mb-4">Development / QA</h3>
+                            <p class="!ledaing-[1.6]">Development and Quality Assurance (QA) are pivotal phases in
+                                software creation. Development involves coding and building the software, while QA
+                                rigorously tests it for quality and functionality. This collaboration results in a
+                                high-quality, reliable software product that meets client expectations.</p>
+                        </div>
+                        <span class="hidden lg:block absolute bottom-[-60px] left-[-100px] z-[-1]"><img
+                                src="Static/Images/project-4-after.svg" class="2xl:w-[100px] 2xl:h-[100px]" width="70"
+                                height="70" alt="img"></span>
+                    </div>
+                    <div
+                        class="flex-grow lg:flex-grow-0 lg:w-[46%] mb-6 lg:mb-0  bg-white lg:bg-lightgray rounded-[20px] py-8 px-4 relative z-[2] 2xl:px-8">
+                        <div class="flex flex-col  h-full text-sm ">
+                            <div class="bg-[url('../Static/Images/bg-egg-shape.svg')] bg-no-repeat bg-cover 
+                        w-[120px] h-[130px] flex justify-center items-center relative mb-4">
+                                <span class="text-[14px] text-[#525167] inline-block font-bold absolute top-[3px]">STEP
+                                    5</span>
+                                <img src="Static/Images/deployment.svg" class="h-[44px] w-[44px] " height="44"
+                                    width="44" alt="leadership">
+                            </div>
+                            <h3 class="text-lightblue uppercase text-[18px] font-bold mb-4">Deployment</h3>
+                            <p class="!ledaing-[1.6]">Deployment marks the pivotal moment when the developed software is
+                                launched
+                                into its target environment, making it accessible to users. It involves careful
+                                planning, configuration, and testing to ensure a smooth transition from development to
+                                production. Successful deployment is critical for delivering a functional and reliable
+                                software product to end-users.</p>
+                        </div>
+                        <span class="hidden lg:block absolute bottom-[-160px] right-[-100px] z-[-1]"><img
+                                src="Static/Images/project-5-after.svg" class="2xl:w-[180px] 2xl:h-[180px]" width="140"
+                                height="140" alt="img"></span>
+                    </div>
+                    <div
+                        class="flex-grow lg:flex-grow-0 lg:w-[46%] mb-6 lg:mb-0  bg-white lg:bg-lightgray rounded-[20px] py-8 px-4 relative z-[2] 2xl:px-8">
+                        <div class="flex flex-col  h-full text-sm ">
+                            <div class="bg-[url('../Static/Images/bg-egg-shape.svg')] bg-no-repeat bg-cover 
+                        w-[120px] h-[130px] flex justify-center items-center relative mb-4">
+                                <span class="text-[14px] text-[#525167] inline-block font-bold absolute top-[3px]">STEP
+                                    6</span>
+                                <img src="Static/Images/deployment.svg" class="h-[44px] w-[44px] " height="44"
+                                    width="44" alt="leadership">
+                            </div>
+                            <h3 class="text-lightblue uppercase text-[18px] font-bold mb-4">Guarantee Period</h3>
+                            <p class="!ledaing-[1.6]">The Guarantee Period is a defined timeframe following software
+                                deployment during which the development team provides support and resolves any
+                                post-launch issues or defects. It offers clients peace of mind by ensuring the
+                                software's stability and reliability after implementation. This period fosters long-term
+                                client satisfaction and strengthens the software's performance.</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="absolute left-0 bottom-[-4rem] z-[-1]"><img src="Static/Images/circle-bottom.svg"
+                        width="200" height="220"></span>
+
+            </div>
+            <span class="absolute left-0 top-[-60px] lg:top-[-250px] z-[-1]"><img
+                    src="Static/Images/double-left-arrow.svg" width="200" height="220"></span>
+            <span class="absolute right-0 top-[-100px] lg:top-[-150px] z-[-1]"><img
+                    src="Static/Images/right-arrow-single.svg" width="200" height="220"></span>
+            <span class="absolute right-0 top-[50%] -translate-y-1/2 rotate-180 z-[-1]"><img
+                    src="Static/Images/double-left-arrow.svg" width="200" height="220"></span>
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+</body>
+
+</html>

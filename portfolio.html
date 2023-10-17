@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rootpointers</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="shortcut icon" href="./static/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="navba relative z-[999]">
+        <nav class="fixed left-0 right-0 bg-white py-4">
+            <div class="container flex items-center  mx-auto justify-between lg:justify-normal  ">
+                <div class="header-logo mr-16">
+                    <a href="./index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="59" height="66" viewBox="0 0 59 66" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15.5264 29.5007V14.4641C15.5264 14.4641 24.4643 14.6318 29.3801 14.4641C34.2957 14.2964 43.178 16.1969 45.2447 23.6873C47.3113 31.1774 42.2279 39.6739 30.7764 39.618H23.6821V48.5431L15.5264 48.6454V33.1339C15.5264 33.1339 27.3693 33.1339 29.6593 33.1339C31.9498 33.1339 37.7033 32.4908 37.4244 27.2088C37.1448 21.9264 33.4021 21.0878 30.7764 21.1159C28.1512 21.1439 23.7657 21.1159 23.7657 21.1159V29.4724L15.5264 29.5007Z"
+                                fill="#4A83E7" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M35.4521 42.759C35.4521 42.759 40.8587 42.1645 42.7721 41.1035L48.0224 48.632L39.5457 48.6455L35.4521 42.759Z"
+                                fill="#4A83E7" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.442383 47.4983C0.442383 48.8564 1.17603 50.1122 2.3666 50.7915L27.6815 65.2317C28.872 65.9104 30.3391 65.9104 31.53 65.2317L56.8447 50.7915C58.0352 50.1122 58.7686 48.8564 58.7686 47.4983V18.6175C58.7686 17.2592 58.0352 16.0039 56.8447 15.3248L31.53 0.884411C30.3391 0.205196 28.872 0.205196 27.6815 0.884411L2.3666 15.3248C1.17603 16.0039 0.442383 17.2591 0.442383 18.6175V47.4983ZM27.8613 62.2253L4.9116 49.1342C3.83216 48.5184 3.16711 47.3802 3.16711 46.1493V19.9669C3.16711 18.7354 3.83216 17.5974 4.9116 16.9817L27.8613 3.89071C28.9406 3.27499 30.2705 3.27499 31.3498 3.89071L54.2995 16.9817C55.3787 17.5974 56.0439 18.7354 56.0439 19.9669V46.1493C56.0439 47.3802 55.3787 48.5184 54.2995 49.1342L31.3498 62.2253C30.2705 62.8411 28.9406 62.8411 27.8613 62.2253Z"
+                                fill="#4A83E7" />
+                        </svg>
+                    </a>
+                </div>
+                <label class="menu lg:hidden" for="chk-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none"
+                        class="hamburger">
+                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </label>
+                <input hidden class="toogle-accordion" type="checkbox" id="chk-btn" />
+                <ul
+                    class="navbar-menu bg-white h-0 overflow-hidden lg:h-auto lg: lg:top-0 flex-col lg:flex-row flex items-center font-medium xl:text-lg [&>li]:w-fit [&>li]:cursor-pointer [&>li:hover]:text-blue-600 absolute  left-0 top-[6rem] w-full lg:w-auto lg:static transition-all duration-500 lg:gap-[4rem]">
+                    <li class="py-1 lg:py-0"><a href="index.html">Home</a></li>
+                    <li class="py-1 lg:py-0"><a href="services.html">Services</a></li>
+                    <li class="py-1 lg:py-0"><a href="portfolio.html">Portfolio</a></li>
+                    <li class="py-1 lg:py-0"><a href="our-team.html">Our Team</a></li>
+                    <li class="py-1 lg:py-0"><a href="contact-us.html">About Us</a></li>
+                </ul>
+                <ul
+                    class="nav-contact lg:flex font-medium ml-auto xl:text-lg hidden lg:gap-4 px-2 [&>li]:cursor-pointer">
+                    <li class="text-blue-600">
+                        <a href="tel:+74951519090">+7 (495) 151-9090</a>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <circle cx="14.9658" cy="14" r="13.5" fill="white" stroke="#4A83E7" />
+                            <path
+                                d="M16.3986 11.2936C16.9598 11.4028 17.4754 11.6767 17.8797 12.0802C18.284 12.4837 18.5584 12.9984 18.6679 13.5585L16.3986 11.2936ZM16.3986 9C17.5644 9.12926 18.6515 9.65033 19.4815 10.4776C20.3114 11.3049 20.8348 12.3893 20.9658 13.5527L16.3986 9ZM20.3913 18.1284V19.8486C20.392 20.0083 20.3592 20.1663 20.2951 20.3126C20.231 20.459 20.137 20.5903 20.0191 20.6982C19.9012 20.8062 19.762 20.8884 19.6105 20.9396C19.4589 20.9907 19.2983 21.0097 19.1389 20.9953C17.3711 20.8036 15.673 20.2007 14.1811 19.235C12.793 18.3547 11.6162 17.1801 10.7342 15.7947C9.76327 14.2988 9.15906 12.5957 8.97048 10.8234C8.95613 10.6648 8.97501 10.505 9.02592 10.3541C9.07684 10.2033 9.15867 10.0646 9.26621 9.94703C9.37375 9.82944 9.50465 9.73549 9.65056 9.67117C9.79647 9.60684 9.9542 9.57354 10.1137 9.57339H11.8372C12.116 9.57065 12.3863 9.66919 12.5977 9.85064C12.8091 10.0321 12.9471 10.2841 12.9862 10.5596C13.0589 11.1101 13.1938 11.6506 13.3883 12.1709C13.4656 12.3761 13.4823 12.5991 13.4365 12.8136C13.3907 13.028 13.2842 13.2248 13.1298 13.3807L12.4002 14.1089C13.218 15.5444 14.4089 16.733 15.8471 17.5493L16.5767 16.8211C16.7329 16.6669 16.9301 16.5606 17.145 16.5149C17.3598 16.4692 17.5833 16.4859 17.7889 16.563C18.3101 16.7572 18.8517 16.8918 19.4032 16.9644C19.6823 17.0037 19.9371 17.144 20.1193 17.3586C20.3015 17.5732 20.3983 17.8472 20.3913 18.1284Z"
+                                stroke="#4A83E7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <circle cx="14.8965" cy="14" r="13.5" fill="white" stroke="#4A83E7" />
+                            <path
+                                d="M20.8965 17C20.8965 17.3536 20.756 17.6928 20.506 17.9428C20.2559 18.1929 19.9168 18.3333 19.5632 18.3333H11.5632L8.89648 21V10.3333C8.89648 9.97971 9.03696 9.64057 9.28701 9.39052C9.53706 9.14048 9.8762 9 10.2298 9H19.5632C19.9168 9 20.2559 9.14048 20.506 9.39052C20.756 9.64057 20.8965 9.97971 20.8965 10.3333V17Z"
+                                stroke="#4A83E7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-[98px]">
+        <section class="hero py-[7rem] lg:py-36 2xl:py-[13rem] 3xl:py-[16rem] 4xl:py-[18rem] relative">
+            <span class="traingles absolute bottom-0 left-0 z-[-1]"><img src="Static/Images/left-triangles.png" alt="">
+            </span>
+            <div class="container flex z-[2]">
+                <div class="portion-1 relative  md:w-2/4  lg:m-0">
+                    <div class="banner-content">
+                        <h1 class="text-xl lg:text-2xl xl:text-[38px] 2xl:text-[48px] 
+                            xl:leading-[3.5rem] font-extrabold mb-3">
+                            OUR <span class="text-lightblue"> PORTFOLIO </span></h1>
+                        <p class="text-sm xl:text-lg 2xl:text-xl">Explore our company portfolio to witness a diverse
+                            array of
+                            successful
+                            projects, each a testament to our commitment to innovation
+                            and excellence in web and app development. </p>
+
+                    </div>
+                    <a href="#" class="px-6 inline-block rounded-3xl hover:bg-blue-700 hover:cursor-pointer
+                         bg-[#4A83E7] text-white mt-7 text-sm leading-10">Explore</a>
+                    <!-- <div class="imgs relative">
+                        <div class="rounded-arrow absolute left-3 -top-7 lg:left-[8.5rem] -z-10"><img
+                                src="Static/Images/big=rotate-arrow.png" alt=""> </div>
+                    </div> -->
+
+                </div>
+                <div class="portion-2  flex flex-col justify-end">
+                </div>
+            </div>
+
+            <div class="hidden md:block absolute top-[50%] right-0  -translate-y-2/4 max-w-[300px] z-[-1] lg:max-w-[400px] 
+            2xl:max-w-[500px] 3xl:max-w-[100%]">
+                <img src="Static/Images/portfolio-banner.svg" width="594" height="677">
+            </div>
+
+        </section>
+
+
+        <section class="homecare-section my-[4rem] lg:my-[0] lg:bg-white">
+            <div class="container px-0 md:px-5">
+                <div class="w-[80%] md:max-w-[500px] lg:max-w-[600px] mx-auto">
+                    <h2 class="heading-21 text-center interFont">Web Aplication</h2>
+                    <p class="p-tag2 text-center">Experience the difference with Rootpointers
+                        your trusted partner for web application development.</p>
+                </div>
+                <div class="p-[2rem_0_3rem_0] px-[10px] text-[0.925rem]
+                text-center lg:text-left mx-auto md:p-[3rem_0_4rem_0]  
+                lg:p-[6rem_1rem_8rem_1rem] xl:p-[6rem_2rem_8rem_2rem] lg:mx-[0] relative lg:text-[1rem]
+                md:flex md:justify-between lg:w-full 
+                ">
+                    <div class="md:w-[60%] flex-[0_0_auto] mb-8 md:text-left">
+                        <div class="flex justify-center md:justify-start flex-grow  lg:w-[23%] 
+                          mb-2 xl:mb-10">
+
+                            <img src="Static/Images/Home-care.svg" class="h-[80px] w-[80px] lg:h-[122px] lg:w-[122px] "
+                                height="44" width="44" alt="homecare">
+
+
+
+                        </div>
+                        <h3 class="heading-3">CHOICE HOME CARE</h3>
+                        <p class="text-primary text-sm mb-4 md:mb-6">Revolutionizing in-home care for seniors and
+                            children with developmental <br>
+                            disabilities in LosAngeles and Californiathrough personalized, compassionate
+                            services.</p>
+                        <button class="px-3  rounded-3xl hover:bg-blue-700 hover:cursor-pointer
+                            bg-[#4A83E7] text-white text-sm leading-10">View Profile</button>
+
+                    </div>
+                    <div class="md:w-[39%] flex-[0_0_auto] flex justify-center mt-6 lg:mt-0">
+                        <img src="Static/Images/laptop.svg" width="432" height="288"
+                            class="rounded-[10px] lg:rounded-[0px] lg:w-full" alt="team image">
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="projects-modals bg-gradient-modals py-[4rem] ">
+            <div class="container">
+                <div class="flex justify-center items-center gap-[1rem] flex-wrap">
+
+                    <a href="#" class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images//VEINS.svg" class="h-full w-full mb-3" height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+
+                    </a>
+
+                    <a href="#" class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/Shin_Ranker.svg" class="h-full w-full mb-3" height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+
+                    </a>
+
+                    <a href="#" class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/civil_construction.svg" class="h-full w-full mb-3" height="44"
+                                width="44" alt="civil">
+
+                        </div>
+
+                    </a>
+
+                    <a href="#" class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images//VEINS.svg" class="h-full w-full mb-3" height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="homecare-section py-[4rem]  lg:bg-white relative z-[2]">
+            <div class="container ">
+                <div class="py-8 w-[80%] md:max-w-[500px] lg:max-w-[600px] mx-auto text-center">
+                    <h2 class="heading-21 text-center interFont">Mobile Aplication</h2>
+                    <div class="relative">
+                        <p class="p-tag2 text-center">Rootpointers specializes in delivering high-quality,
+                            user-friendly mobile applications drive success for businesses across industries. </p>
+                        <span
+                            class="absolute  right-[-150px] 2xl:right-[-200px] bottom-[-150px] z-[-1] 
+                            rotate-12 hidden lg:block">
+                            <img src="Static/Images/rounded-pointer.svg" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="p-[2rem_0_3rem_0] px-[10px] relative z-[2] text-[0.925rem] text-center lg:text-left
+                flex flex-col-reverse md:flex-row justify-between md:text-start gap-4 w-full">
+
+                    <div class="md:w-[39%] flex-[0_0_auto] mt-6 md:mt-0">
+                        <img src="Static/Images/mobile-development.svg" width="432" height="288"
+                            class="rounded-[10px] lg:rounded-[0px] mx-auto md:mx-0" alt="team image">
+
+                    </div>
+
+                    <div class="md:w-[60%] flex-[0_0_auto] ">
+                        <div class="flex justify-center md:justify-start lg:w-[23%] mb-2 xl:mb-10">
+                            <img src="Static/Images/Home-care.svg" class="h-[80px] w-[80px] lg:h-[122px] lg:w-[122px] "
+                                height="44" width="44" alt="homecare">
+
+                        </div>
+                        <h3 class="heading-3">CHOICE HOME CARE</h3>
+                        <p class="text-primary text-sm mb-4 md:mb-6">Revolutionizing in-home care for seniors and
+                            children with developmental
+                            disabilities in LosAngeles and Californiathrough personalized, compassionate
+                            services.</p>
+                        <button class="px-3  rounded-3xl hover:bg-blue-700 hover:cursor-pointer
+                            bg-[#4A83E7] text-white text-sm leading-10">View Profile</button>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="flex justify-center items-stretch gap-4 flex-wrap">
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/ESR.png" class="h-[132px] w-[132px] mb-3" height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+                    </div>
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/rp_logo.svg" class="h-[132px] w-[132px] " height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+                    </div>
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/Yorm.svg" class="h-[132px] w-[132px] " height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+                    </div>
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/Sieze.svg" class="h-[132px] w-[132px] " height="44" width="44"
+                                alt="leadership">
+                        </div>
+                    </div>
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/Sieze.svg" class="h-[132px] w-[132px] " height="44" width="44"
+                                alt="leadership">
+                        </div>
+                    </div>
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/hero.svg" class="h-[132px] w-[132px] " height="44" width="44"
+                                alt="leadership">
+                        </div>
+                    </div>
+                    <div class="flex-grow w-[47%] lg:w-[23%] bg-white shadow-[1px_2px_12px_#ccccccbd] p-3 rounded-[10px]
+                    lg:bg-[transparent] lg:shadow-[none] lg:p-0 lg:rounded-[0] mb-4 lg:mb-8 xl:mb-10">
+                        <div class="flex flex-col items-center h-full text-sm text-center ">
+                            <img src="Static/Images/macheech.svg" class="h-[132px] w-[132px] " height="44" width="44"
+                                alt="leadership">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="traingles absolute top-[20%] left-0 z-[-1]"><img src="Static/Images/left-triangles.png" alt="">
+            </span>
+            <span class="traingles absolute bottom-[5%] right-0 z-[-1]"><img
+                    src="Static/Images/double-right-traingle-two.svg" alt="">
+            </span>
+        </section>
+
+
+
+        <section class="games lg:my-[0] lg:bg-white relative">
+            <div class="container z-[2]">
+                <div class="py-8 w-[80%] md:max-w-[500px] lg:max-w-[650px] mx-auto text-center">
+
+                    <h2 class="heading-21 text-center interFont">Games</h2>
+                    <p class="p-tag2 text-center">Immerse yourself in realistic gameplay with diverse
+                        simulation games, including
+                        crane parking, car parking, virtual mother, and city bus driver experiences.
+
+                    </p>
+                </div>
+                <div class="p-[2rem_0_3rem_0] px-[10px] text-[0.925rem]
+                text-center lg:text-left w-full flex flex-col-reverse md:flex-row justify-between items-center">
+                    <div class="lg:w-1/2 lg:flex-[0_0_auto]">
+                        <h3 class="heading-3">Real City Snow Construction 3D </h3>
+                        <p class="p-tag">Real City Snow Construction 3D is a challenging
+                            crane parking
+                            game with time-limited digging , snow
+                            environment, and heavy
+                            excavator simulation.</p>
+
+                    </div>
+                    <div class="lg:w-[48%] flex justify-center ">
+                        <img src="Static/Images/gaming-mobile.svg" class="lg:w-full" width="447" height="447"
+                            class="rounded-[10px] lg:rounded-[0px]" alt="team image">
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <span class="traingles absolute bottom-[20%] left-0"><img src="Static/Images/left-triangles.png" alt="">
+            </span>
+        </section>
+
+        <section class="projects-modals bg-gradient-modals py-[4rem] lg:mb-[5rem] 2xl:mb-[8rem]">
+            <div class="container">
+                <div class="flex justify-center lg:justify-between  flex-wrap ">
+
+                    <div class=" lg:w-[25%] 2xl:w-[30%]  p-3 rounded-[10px]
+                    lg:p-0 lg:rounded-[0] mb-4 lg:mb-0">
+                        <div class=" h-full text-sm text-center ">
+                            <img src="Static/Images/Cars.svg" class="2xl:w-full mb-3" height="158" width="264"
+                                alt="leadership">
+                            <h3 class="text-center text-sm text-lightblue font-semibold mb-2 lg:text-[20px] 3xl:text-[22px]
+                             lg:text-left">CAR PARKING
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <div class=" lg:w-[25%] 2xl:w-[30%]  p-3 rounded-[10px]
+                    lg:p-0 lg:rounded-[0] mb-4 lg:mb-0">
+                        <div class=" h-full text-sm text-center ">
+                            <img src="Static/Images/Virtualimage.svg" class="2xl:w-full mb-3" height="158" width="264"
+                                alt="leadership">
+                            <h3 class="text-center text-sm text-lightblue font-semibold mb-2 lg:text-[20px] 3xl:text-[22px]
+                             lg:text-left">Virtual Mother
+                                Simulator Game
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <div class=" lg:w-[25%] 2xl:w-[30%]  p-3 rounded-[10px]
+                    lg:p-0 lg:rounded-[0] mb-4 lg:mb-0">
+                        <div class=" h-full text-sm text-center ">
+                            <img src="Static/Images/Treatment_hunt.svg" class="2xl:w-full mb-3" height="158" width="264"
+                                alt="leadership">
+                            <h3 class="text-center text-sm text-lightblue font-semibold mb-2 lg:text-[20px] 3xl:text-[22px]
+                             lg:text-left">Treasure Hunt
+
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+    <footer class="bg--gradient py-[4rem] footer-section lg:py-[6rem] relative z-[2]">
+        <div class="container">
+            <div class="flex flex-wrap mb-[2rem] lg:mb-[6rem]">
+                <div class="w-full md:w-[50%] lg:w-[22%]">
+                    <h3 class="text-lg font-semibold mb-3 lg:mb-5">Product</h3>
+                    <ul class="mb-4 lg:mb-0">
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Employee database</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Payroll</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Absences</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Time tracking</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Shift planner</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Recruiting</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-[50%] lg:w-[22%]">
+                    <h3 class="text-lg font-semibold mb-3 lg:mb-5">Product</h3>
+                    <ul class="mb-4 lg:mb-0">
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">FAQ</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Blog</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Support</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-[50%] lg:w-[22%]">
+                    <h3 class="text-lg font-semibold mb-3 lg:mb-5">Company</h3>
+                    <ul class="mb-4 lg:mb-0">
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">About us</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Careers</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Contact us</a></li>
+                        <li class="pb-2 lg:pb-3"><a href="#" class="text-[#7d878e]">Shift planner</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-[50%] lg:w-[34%] bg-white py-[2rem] px-[1rem] lg:px-[3rem]
+                 lg:py-[3rem] rounded-[24px] lg:mt-[-40px]  z-[10]">
+                    <h3 class="text-lg font-semibold mb-3 lg:mb-5">Subscribe</h3>
+                    <div class="relative max-w-[300px] w-full mb-5 lg:mb-7">
+                        <input type="email" placeholder="" class="w-full px-4 py-2 border rounded-lg focus:ring-0 focus:border-blue-500 
+                          outline-none hover:border-blue-500 " placeholder="Search" />
+                        <span class="absolute inset-y-0 right-0 px-3 py-2 bg-blue-500 text-white
+                        rounded-r-lg cursor-pointer">
+                            <svg class="h-[24px] w-[24px] fill-white">
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </span>
+                    </div>
+
+
+                    <p class="text-[#7d878e]">Hello, we are RootPointers. Our goal is to translate the positive effects
+                        from revolutionizing
+                        how companies engage with their clients & their team.</p>
+                </div>
+            </div>
+            <div class="border-t-[#00000055] border-t-[1px] border-solid pt-4 lg:pt-8
+                flex flex-col gap-5 md:flex-row justify-between items-center">
+                <a href="./index.html">
+                    <img src="Static/Images/site-logo.svg" height="59" width="66" class="" alt="site logo" />
+                </a>
+                <div class="flex items-center gap-[1rem]">
+                    <a href="#" class="text-[#000] font-semibold hover:text-lightblue">Terms</a>
+                    <a href="#" class="text-[#000] font-semibold hover:text-lightblue">Privacy</a>
+                    <a href="#" class="text-[#000] font-semibold hover:text-lightblue">Cookies</a>
+                </div>
+                <div class="socilmedia-links flex items-center gap-[1rem]">
+                    <a href="#" class="flex items-center justify-center h-[44px] w-[44px] rounded-full">
+                        <svg class="h-[20px] w-[20px] fill-lightblue">
+                            <use xlink:href="#linkdin"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="flex items-center justify-center h-[44px] w-[44px] rounded-full">
+                        <svg class="h-[20px] w-[20px] fill-lightblue">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="flex items-center justify-center h-[44px] w-[44px] rounded-full">
+                        <svg class="h-[20px] w-[20px] fill-lightblue">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <span class="absolute left-0 top-[5%] "><img src="Static/Images/footer-bg-before.svg" alt="">
+        </span>
+        <span class="absolute right-0 bottom-[10%] "><img src="Static/Images/footer-bg-img.png" alt="">
+        </span>
+    </footer>
+    <script src="/script/script.js"> </script>
+
+    <!-- <span>
+        <svg>
+            <use xlink:href="#play"></use>
+        </svg>
+    </span> -->
+
+    <div hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol id="play" viewBox="0 0 14.418 16.02">
+                <title>play</title>
+                <path d="M6.262,3.147a2,2,0,0,1,3.5,0l4.611,8.3a2,2,0,0,1-1.748,2.971H3.4a2,2,0,0,1-1.748-2.971Z"
+                    transform="translate(14.418) rotate(90)" fill="#088fec"></path>
+            </symbol>
+
+            <symbol id="facebook" viewBox="0 0 24 24">
+                <title>facebook</title>
+                <path
+                    d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z">
+                </path>
+            </symbol>
+            <symbol id="instagram" viewBox="0 0 448 512">
+                <title>Instagram</title>
+                <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+            </symbol>
+            <symbol id="twitter" viewBox="0 0 512 512">
+                <title>twitter</title>
+                <path
+                    d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016 c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992 c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056 c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152 c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792 c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44 C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568 C480.224,136.96,497.728,118.496,512,97.248z">
+                </path>
+            </symbol>
+            <symbol id="youtube" viewBox="0 0 24 24">
+                <title>youtube</title>
+                <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                </path>
+            </symbol>
+            <symbol id="whatsapp" viewBox="0 0 512 512">
+                <title>whatsapp</title>
+                <path
+                    d="M256.064,0h-0.128C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104l98.4-31.456 C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z M405.024,361.504 c-6.176,17.44-30.688,31.904-50.24,36.128c-13.376,2.848-30.848,5.12-89.664-19.264C189.888,347.2,141.44,270.752,137.664,265.792 c-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624,26.176-62.304c6.176-6.304,16.384-9.184,26.176-9.184 c3.168,0,6.016,0.16,8.576,0.288c7.52,0.32,11.296,0.768,16.256,12.64c6.176,14.88,21.216,51.616,23.008,55.392 c1.824,3.776,3.648,8.896,1.088,13.856c-2.4,5.12-4.512,7.392-8.288,11.744c-3.776,4.352-7.36,7.68-11.136,12.352 c-3.456,4.064-7.36,8.416-3.008,15.936c4.352,7.36,19.392,31.904,41.536,51.616c28.576,25.44,51.744,33.568,60.032,37.024 c6.176,2.56,13.536,1.952,18.048-2.848c5.728-6.176,12.8-16.416,20-26.496c5.12-7.232,11.584-8.128,18.368-5.568 c6.912,2.4,43.488,20.48,51.008,24.224c7.52,3.776,12.48,5.568,14.304,8.736C411.2,329.152,411.2,344.032,405.024,361.504z">
+                </path>
+            </symbol>
+            <symbol id="arrow-right" viewBox="0 0 24 24">
+                <title>Arrow Right</title>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+
+            </symbol>
+            <symbol id="linkdin" viewBox="0 0 448 512">
+                <title>linkdin</title>
+                <path
+                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+            </symbol>
+
+
+        </svg>
+    </div>
+</body>
+
+</html>
